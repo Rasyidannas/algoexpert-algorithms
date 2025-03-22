@@ -31,9 +31,9 @@ def two_number_sum(array, targetSum)
   while left < right do
     currentSum = array[left] + array[right]
 
-    if(currentSum === targetSum)
+    if currentSum === targetSum
       return [array[left], array[right]]  
-    elsif
+    elsif currentSum < targetSum
       left += 1
     else
       rigth -= 1
