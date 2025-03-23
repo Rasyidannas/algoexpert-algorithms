@@ -1,25 +1,27 @@
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-sum = 10
-// Time Complexity is O(2n)
-function threeSum(arr, sum) {
-  const obj = {};
-  
-  for (let i = 0; i < arr.length - 1; i++) {
-    currentTwoSum = arr[i] + arr[i+1];
-    x = sum - currentTwoSum;
+function threeSum(array, targetSum) {
+  array.sort((a, b) => a - b); // Sorting the array for two-pointer approach
 
-    // this will store currentTwoSum under sum
-    if (currentTwoSum < sum ) obj[x]=[arr[i], arr[i+1]]; 
+  for (let i = 0; i < array.length - 2; i++) {
+    let left = i + 1;
+    let right = array.length - 1;
+
+    while (left < right) {
+      const currentSum = array[i] + array[left] + array[right];
+
+      if (currentSum === targetSum) {
+        return [array[i], array[left], array[right]].join(',');
+      } else if (currentSum < targetSum) {
+        left++;
+      } else {
+        right--;
+      }
+    }
   }
 
-  for (let i = 0; i < arr.length; i++) {
-    if (obj[arr[i]]) return `${arr[i]},${obj[arr[i]]}`;
-  }
-
-  return "Pair no found"
+  return null;
 }
 
-console.log(threeSum(arr, sum));
-// Other testing with random arr 
-arr2=[1, 2, 3, 4, 5, 6];
-console.log(threeSum(arr2, sum));
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const sum = 13;
+
+console.log(threeSum(arr, sum)); // Output: "1,2,7"

@@ -16,4 +16,4 @@ def validate_subsequence(array, sequence):
 
     return seq_idx == len(sequence)
 
-print(validate_subsequence(arr, seq))  # Output: True
+print(validate_subsequence(arr, seq))
