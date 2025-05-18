@@ -22,7 +22,7 @@ end
 
 puts two_number_sum(arr, sum)
 
-# This isusing two pointer O(nlog(n)) time | O(1) space
+# This is using two pointer O(nlog(n)) time | O(1) space
 def two_number_sum(array, targetSum)
   array.sort!
   left = 0

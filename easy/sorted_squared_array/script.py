@@ -1,4 +1,4 @@
-# Squre all itme in array and then sort
+# Squre all items in array and then sort
 arr=[1,2,3,-8,-1]
 # this is using brute force O(nlogn) time | O(n) space
 def sorted_squared_array(array):
